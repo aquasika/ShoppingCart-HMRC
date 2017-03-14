@@ -5,8 +5,8 @@ import hmrc.product.Product
 /**
   * Created by aanand on 14/03/2017.
   */
-class BasicShoppingCart {
-  def checkout(selectedItems: List[Product]) = selectedItems.foldLeft(BigDecimal(0)) { (price, product) =>
+class BasicShoppingCart extends Cart {
+  override def checkout(selectedItems: List[Product]) = selectedItems.foldLeft(BigDecimal(0)) { (price, product) =>
     product.price + price
   }
 }
